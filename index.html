@@ -681,7 +681,16 @@
     /* ============================================================
        THEME TOGGLE FLOAT  (bottom-left)
     ============================================================ */
-    .theme-float { position:fixed; bottom:1.75rem; left:1.75rem; z-index:990; }
+    .theme-float {
+      position:fixed; bottom:1.75rem; left:1.75rem; z-index:990;
+      opacity:0; pointer-events:none;
+      transform:translateY(8px);
+      transition:opacity .35s ease, transform .35s ease;
+    }
+    .theme-float.show {
+      opacity:1; pointer-events:auto;
+      transform:translateY(0);
+    }
     .theme-float-btn {
       display:flex; align-items:center; gap:.5rem;
       padding:.6rem 1.1rem; border-radius:50px;
@@ -1149,10 +1158,13 @@
     applyTheme(html.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
   });
 
-  /* ── Navbar reveal on scroll ── */
-  const navbar = document.getElementById('navbar');
+  /* ── Navbar + theme-float reveal on scroll ── */
+  const navbar     = document.getElementById('navbar');
+  const themeFloat = document.querySelector('.theme-float');
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('show', window.scrollY > 80);
+    const scrolled = window.scrollY > 80;
+    navbar.classList.toggle('show', scrolled);
+    themeFloat.classList.toggle('show', scrolled);
   }, { passive: true });
 
   /* ── Hamburger ── */
