@@ -278,14 +278,13 @@
     }
     .c-slide.active { opacity:1; }
 
-    /* Product image — fills the full right half of the hero */
+    /* Product image — fills the full right half of the hero, cropped/zoomed to match */
     .c-slide img {
       position:absolute;
       right:0; top:0;
       width:55%; height:100%;
-      object-fit:contain;
-      object-position:center right;
-      padding:5vh 4vw 5vh 0;
+      object-fit:cover;
+      object-position:center;
       filter:drop-shadow(0 20px 60px rgba(212,175,55,.18));
     }
     /* Ken-Burns on active */
@@ -430,9 +429,8 @@
       /* stronger overlay on mobile — product is directly behind text */
       .c-overlay{ background:rgba(8,2,16,.88); }
       .c-slide img{
-        width:80%; height:50%; right:50%; top:auto; bottom:0;
-        object-position:center bottom; padding:0 0 1rem;
-        transform:translateX(50%);
+        width:100%; height:45%; right:0; top:auto; bottom:0;
+        object-fit:cover; object-position:center;
       }
       .c-caption  { right:50%; transform:translateX(50%); bottom:4.5rem; }
     }
