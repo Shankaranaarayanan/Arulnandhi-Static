@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Arulnandhi Minnagam – Electricals, Waterline Pipe Fittings & Sanitary Wares. Papampatti Main Road, Peedampalli, Sulur, Tamil Nadu. Call: 8122990485" />
+  <meta name="keywords" content="electricals sulur, pipe fittings peedampalli, sanitary wares sulur, hardware shop sulur, arulnandhi minnagam" />
+  <meta property="og:title" content="Arulnandhi Minnagam | Electricals, Waterline & Sanitary Wares" />
+  <meta property="og:description" content="Quality Electricals, Waterline Pipe Fittings & Sanitary Wares – Sulur, Tamil Nadu. Call +91 81229 90485" />
+  <meta property="og:type" content="website" />
+  <title>Arulnandhi Minnagam | Electricals · Waterline · Sanitary – Sulur</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    a   { text-decoration: none; color: inherit; }
+    ul  { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ============================================================
+       DESIGN TOKENS
+       --c-gold / --c-dark are constant (hero is always dark).
+       --gold adapts to light/dark theme for body sections.
+    ============================================================ */
+    :root {
+      /* ── always-on brand palette (hero + buttons) ── */
+      --c-gold:      #D4AF37;   /* bright gold — used on dark surfaces   */
+      --c-dark:      #0D0D0D;   /* near-black — button fill               */
+      --c-bg:        #080210;   /* hero carousel backdrop                 */
+
+      /* ── gold adapts to body theme ── */
+      --gold:        #9B6D00;
+      --gold-light:  #C49000;
+      --gold-dark:   #7A5500;
+      --gold-tint:   rgba(155,109,0,.08);
+      --gold-tint2:  rgba(155,109,0,.17);
+
+      /* ── surfaces ── */
+      --bg:          #FAF5EE;
+      --bg-card:     #FFFFFF;
+      --bg-card2:    #FEF8F0;
+      --bg-nav:      rgba(255,252,248,.97);
+
+      /* ── text ── */
+      --text:        #1A0810;
+      --muted:       #6A4E42;
+
+      /* ── chrome ── */
+      --border:      rgba(155,109,0,.18);
+      --shadow:      0 4px 24px rgba(155,109,0,.09);
+      --shadow-lg:   0 14px 44px rgba(155,109,0,.15);
+      --nav-shadow:  0 2px 20px rgba(155,109,0,.10);
+
+      /* ── misc ── */
+      --dot:         rgba(155,109,0,.09);
+      --ease:        all 0.3s ease;
+    }
+
+    [data-theme="dark"] {
+      --gold:        #D4AF37;
+      --gold-light:  #ECC94B;
+      --gold-dark:   #B8941E;
+      --gold-tint:   rgba(212,175,55,.10);
+      --gold-tint2:  rgba(212,175,55,.20);
+      --bg:          #0C0305;
+      --bg-card:     #160810;
+      --bg-card2:    #1C0B16;
+      --bg-nav:      rgba(9,2,5,.96);
+      --text:        #EDE8E1;
+      --muted:       #9C8C7C;
+      --border:      rgba(212,175,55,.18);
+      --shadow:      0 4px 24px rgba(0,0,0,.38);
+      --shadow-lg:   0 14px 44px rgba(0,0,0,.52);
+      --nav-shadow:  0 2px 20px rgba(0,0,0,.48);
+      --dot:         rgba(212,175,55,.10);
+    }
+
+    /* ============================================================
+       BASE
+    ============================================================ */
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter','Noto Sans Tamil',sans-serif;
+      background: var(--bg); color: var(--text);
+      overflow-x: hidden; line-height: 1.65;
+      transition: background .4s ease, color .3s ease;
+    }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .container { max-width: 1100px; margin: 0 auto; width: 100%; }
+
+    .section-label {
+      display: inline-block;
+      font-size: .7rem; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--gold); background: var(--gold-tint);
+      padding: .28rem .8rem; border-radius: 50px;
+      margin-bottom: .75rem;
+    }
+
+    .section-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.75rem,4vw,2.75rem);
+      font-weight: 800; color: var(--text);
+      line-height: 1.2; margin-bottom: .75rem;
+    }
+    .highlight { color: var(--gold); }
+
+    .divider {
+      width: 52px; height: 3px;
+      background: linear-gradient(to right, var(--gold-dark), var(--gold-light));
+      border-radius: 2px; margin-bottom: 1.5rem;
+    }
+
+    /* ============================================================
+       BUTTONS  —  Black / Gold brand palette
+    ============================================================ */
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .88rem 2rem; border-radius: 8px;
+      font-size: .92rem; font-weight: 700;
+      transition: var(--ease); cursor: pointer; white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: .3px;
+    }
+
+    /* Primary — black fill, gold border & text */
+    .btn-primary {
+      background: var(--c-dark);
+      color:       var(--c-gold);
+      border:      2px solid var(--c-gold);
+    }
+    .btn-primary:hover {
+      background: var(--c-gold);
+      color:      var(--c-dark);
+      transform:  translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212,175,55,.38);
+    }
+
+    /* Outline — transparent, gold border & text */
+    .btn-outline {
+      background: transparent;
+      color:       var(--c-gold);
+      border:      2px solid var(--c-gold);
+    }
+    .btn-outline:hover {
+      background: rgba(212,175,55,.14);
+      transform:  translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212,175,55,.25);
+    }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(30px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity:0; } to { opacity:1; }
+    }
+    @keyframes pulseDot {
+      0%,100% { box-shadow:0 4px 16px rgba(37,211,102,.42); }
+      50%      { box-shadow:0 4px 32px rgba(37,211,102,.78); }
+    }
+    @keyframes kenBurns {
+      from { transform:scale(1); }
+      to   { transform:scale(1.06); }
+    }
+
+    .fade-up {
+      opacity:0; transform:translateY(36px);
+      transition:opacity .75s ease, transform .75s ease;
+    }
+    .fade-up.show { opacity:1; transform:translateY(0); }
+
+    /* ============================================================
+       NAVBAR
+    ============================================================ */
+    #navbar {
+      position:fixed; top:0; left:0; right:0; z-index:1000;
+      height:68px;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 2rem;
+      background:var(--bg-nav);
+      backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border);
+      box-shadow:var(--nav-shadow);
+      transform:translateY(-100%);
+      transition:transform .42s cubic-bezier(.4,0,.2,1),
+                 background .4s ease, border-color .3s ease;
+    }
+    #navbar.show { transform:translateY(0); }
+
+    .nav-brand { display:flex; align-items:center; }
+    .nav-logo  {
+      height:48px; width:auto; max-width:190px;
+      object-fit:contain; display:block;
+    }
+    [data-theme="dark"] .nav-logo { filter:brightness(1.06); }
+
+    .nav-links { display:flex; gap:2rem; }
+    .nav-links a {
+      font-size:.875rem; font-weight:500; color:var(--text);
+      position:relative; transition:color .25s;
+    }
+    .nav-links a::after {
+      content:''; position:absolute; bottom:-3px; left:0;
+      width:0; height:2px; background:var(--gold); border-radius:1px;
+      transition:width .3s ease;
+    }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-links a:hover::after { width:100%; }
+
+    /* Hamburger */
+    .nav-toggle {
+      display:none; flex-direction:column; gap:5px;
+      cursor:pointer; padding:4px; border:none; background:none;
+    }
+    .nav-toggle span {
+      display:block; width:24px; height:2px;
+      background:var(--gold); border-radius:1px; transition:var(--ease);
+    }
+    .nav-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2){ opacity:0; }
+    .nav-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+    @media(max-width:740px){
+      .nav-toggle{ display:flex; }
+      .nav-links{
+        position:absolute; top:68px; left:0; right:0;
+        flex-direction:column; gap:0;
+        background:var(--bg-nav); border-bottom:1px solid var(--border);
+        max-height:0; overflow:hidden; transition:max-height .38s ease;
+        backdrop-filter:blur(16px);
+      }
+      .nav-links.open{ max-height:280px; }
+      .nav-links a{ display:block; padding:1rem 2rem; border-bottom:1px solid var(--border); }
+      .nav-links a::after{ display:none; }
+    }
+
+    /* ============================================================
+       HERO
+       Carousel sits as a full-screen absolute background.
+       Hero content (logo + text + CTA) floats above it.
+    ============================================================ */
+    #hero {
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      /* content pushed to left — product visible on right */
+      justify-content:flex-start;
+      padding: calc(68px + 4rem) 5vw 4rem calc(max(3rem,6vw));
+      overflow:hidden;
+      /* dark base in case images load slowly */
+      background:var(--c-bg);
+    }
+
+    /* ── Carousel (background layer) ── */
+    .carousel {
+      position:absolute; inset:0; z-index:0;
+      background:var(--c-bg);
+    }
+
+    /* Each slide */
+    .c-slide {
+      position:absolute; inset:0; opacity:0;
+      transition:opacity 1.2s ease;
+    }
+    .c-slide.active { opacity:1; }
+
+    /* Product image — fills the full right half of the hero */
+    .c-slide img {
+      position:absolute;
+      right:0; top:0;
+      width:55%; height:100%;
+      object-fit:contain;
+      object-position:center right;
+      padding:5vh 4vw 5vh 0;
+      filter:drop-shadow(0 20px 60px rgba(212,175,55,.18));
+    }
+    /* Ken-Burns on active */
+    .c-slide.active img {
+      animation:kenBurns 8s ease forwards;
+    }
+
+    /* Product name caption — bottom-right */
+    .c-caption {
+      position:absolute;
+      bottom:5.5rem; right:3%;
+      color:rgba(255,255,255,.4);
+      font-size:.68rem; font-weight:600;
+      letter-spacing:2.5px; text-transform:uppercase;
+      z-index:2;
+    }
+
+    /* Left-to-right gradient — makes text always readable */
+    .c-overlay {
+      position:absolute; inset:0; z-index:1; pointer-events:none;
+      background:linear-gradient(
+        to right,
+        rgba(8,2,16,.98)   0%,
+        rgba(8,2,16,.95)  32%,
+        rgba(8,2,16,.75)  48%,
+        rgba(8,2,16,.20)  62%,
+        rgba(8,2,16,.04)  80%,
+        transparent      100%
+      );
+    }
+
+    /* Subtle dot-grid over the whole hero */
+    .c-grid {
+      position:absolute; inset:0; z-index:2; pointer-events:none;
+      background-image:radial-gradient(circle,rgba(212,175,55,.07) 1px,transparent 1px);
+      background-size:40px 40px;
+    }
+
+    /* Arrow buttons */
+    .c-prev,.c-next {
+      position:absolute; top:50%; z-index:4;
+      transform:translateY(-50%);
+      width:38px; height:38px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.15);
+      color:#fff; border-radius:50%;
+      font-size:1.2rem; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      transition:var(--ease);
+    }
+    .c-prev{ left:.85rem; }
+    .c-next{ right:.85rem; }
+    .c-prev:hover,.c-next:hover{
+      background:rgba(212,175,55,.28);
+      border-color:rgba(212,175,55,.5);
+    }
+
+    /* Dot nav */
+    .c-dots{
+      position:absolute; bottom:1.75rem;
+      left:50%; transform:translateX(-50%);
+      display:flex; gap:.6rem; z-index:4;
+    }
+    .c-dot{
+      width:8px; height:8px; border-radius:50%;
+      background:rgba(255,255,255,.28);
+      border:none; cursor:pointer; transition:var(--ease);
+    }
+    .c-dot.active{
+      background:var(--c-gold);
+      transform:scale(1.4);
+    }
+
+    /* ── Hero content (above carousel) ── */
+    .hero-inner {
+      position:relative; z-index:5;
+      max-width:520px;
+      animation:fadeInUp .9s ease .1s both;
+    }
+
+    /* Logo — prominent on landing */
+    .hero-logo {
+      height:80px; width:auto; max-width:260px;
+      object-fit:contain; display:block;
+      margin-bottom:1.8rem;
+      filter:drop-shadow(0 4px 16px rgba(212,175,55,.25));
+    }
+
+    /* Location badge */
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:rgba(212,175,55,.1);
+      border:1px solid rgba(212,175,55,.28);
+      color:var(--c-gold);
+      padding:.35rem 1.1rem; border-radius:50px;
+      font-size:.72rem; font-weight:700; letter-spacing:1.5px;
+      text-transform:uppercase; margin-bottom:1.4rem;
+    }
+
+    /* Main title — always white on dark hero */
+    .hero-title {
+      font-family:'Inter',sans-serif;
+      font-size:clamp(2.2rem,5.5vw,4rem);
+      font-weight:800; line-height:1.1;
+      color:#FFFFFF;
+      margin-bottom:.6rem;
+    }
+    .hero-title .name-ta {
+      display:block;
+      font-family:'Noto Sans Tamil',sans-serif;
+      font-size:.44em; font-weight:700; letter-spacing:1px;
+      margin-bottom:.35rem;
+      color:var(--c-gold);
+    }
+    .hero-title .accent {
+      background:linear-gradient(120deg,#B8941E,#ECC94B,#D4AF37);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+
+    /* Tagline — always light on dark hero */
+    .hero-tagline {
+      font-size:clamp(.85rem,1.9vw,1rem);
+      color:rgba(255,255,255,.6); margin-bottom:2.4rem;
+    }
+    .hero-tagline .item { color:rgba(255,255,255,.88); font-weight:500; }
+    .hero-tagline .dot  { color:var(--c-gold); font-weight:700; margin:0 .4rem; }
+
+    .hero-cta { display:flex; gap:1rem; flex-wrap:wrap; }
+
+    /* Mobile hero */
+    @media(max-width:768px){
+      #hero{
+        justify-content:center;
+        text-align:center;
+        padding:calc(68px + 3rem) 1.5rem 5rem;
+      }
+      .hero-inner{ text-align:center; }
+      .hero-logo { margin:0 auto 1.6rem; }
+      .hero-cta  { justify-content:center; }
+      /* stronger overlay on mobile — product is directly behind text */
+      .c-overlay{ background:rgba(8,2,16,.88); }
+      .c-slide img{
+        width:80%; height:50%; right:50%; top:auto; bottom:0;
+        object-position:center bottom; padding:0 0 1rem;
+        transform:translateX(50%);
+      }
+      .c-caption  { right:50%; transform:translateX(50%); bottom:4.5rem; }
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    #about {
+      padding:7rem 2rem;
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+    }
+
+    .about-grid {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:4rem; align-items:center;
+    }
+
+    .about-text p {
+      font-size:.93rem; color:var(--muted);
+      line-height:1.9; margin-bottom:.9rem;
+    }
+    .ta-line {
+      font-family:'Noto Sans Tamil',sans-serif;
+      font-size:.98rem; color:var(--text); font-weight:500;
+      padding:.75rem 1rem;
+      background:var(--gold-tint);
+      border-left:3px solid var(--gold);
+      border-radius:0 6px 6px 0;
+      margin-bottom:1rem;
+    }
+
+    .about-feats {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:.85rem; margin-top:1.5rem;
+    }
+    .feat {
+      display:flex; align-items:flex-start; gap:.75rem;
+      background:var(--bg-card);
+      border:1px solid var(--border);
+      border-radius:10px; padding:1rem;
+      transition:var(--ease); box-shadow:var(--shadow);
+    }
+    .feat:hover {
+      border-color:var(--gold-tint2);
+      transform:translateY(-2px); box-shadow:var(--shadow-lg);
+    }
+    .feat-icon { font-size:1.4rem; line-height:1; }
+    .feat-body { font-size:.82rem; color:var(--muted); line-height:1.45; }
+    .feat-body strong {
+      display:block; font-size:.87rem;
+      color:var(--gold); margin-bottom:.15rem;
+    }
+
+    /* About photo */
+    .about-photo-frame {
+      position:relative; border-radius:20px; overflow:hidden;
+      box-shadow:var(--shadow-lg);
+    }
+    .about-photo-frame img {
+      width:100%; height:420px;
+      object-fit:cover; display:block;
+      transition:transform .5s ease;
+    }
+    [data-theme="dark"] .about-photo-frame img { filter:brightness(.85) saturate(.72); }
+    .about-photo-frame:hover img { transform:scale(1.04); }
+
+    .photo-gradient {
+      position:absolute; bottom:0; left:0; right:0;
+      background:linear-gradient(to top,rgba(0,0,0,.84) 0%,transparent 100%);
+      padding:2.5rem 1.5rem 1.5rem;
+      display:flex; justify-content:space-around; align-items:flex-end;
+    }
+    .p-stat { text-align:center; }
+    .p-num  { display:block; font-size:1.6rem; font-weight:800; color:#FFF; }
+    .p-lbl  { font-size:.68rem; color:rgba(255,255,255,.68); text-transform:uppercase; letter-spacing:.5px; }
+
+    .photo-badge {
+      position:absolute; top:1.25rem; left:1.25rem;
+      background:var(--c-dark); color:var(--c-gold);
+      padding:.45rem .9rem; border-radius:8px;
+      font-size:.74rem; font-weight:700;
+      border:1px solid rgba(212,175,55,.35);
+      box-shadow:0 4px 14px rgba(0,0,0,.3);
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    #services { padding:7rem 2rem; }
+
+    .services-hd { text-align:center; margin-bottom:3rem; }
+    .services-hd .divider { margin:0 auto 1rem; }
+    .services-hd p { color:var(--muted); font-size:.9rem; max-width:480px; margin:0 auto; }
+
+    .services-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;
+    }
+
+    .svc-card {
+      background:var(--bg-card);
+      border:1px solid var(--border);
+      border-radius:18px; overflow:hidden;
+      transition:var(--ease); box-shadow:var(--shadow);
+    }
+    .svc-card:hover {
+      transform:translateY(-9px); box-shadow:var(--shadow-lg);
+      border-color:var(--gold-tint2);
+    }
+
+    .svc-img {
+      position:relative; width:100%; height:195px;
+      overflow:hidden; background:var(--bg-card2);
+    }
+    .svc-img img {
+      width:100%; height:100%;
+      object-fit:cover; display:block;
+      transition:transform .45s ease;
+    }
+    [data-theme="dark"] .svc-img img{ filter:brightness(.82) saturate(.7); }
+    .svc-card:hover .svc-img img { transform:scale(1.08); }
+    [data-theme="dark"] .svc-card:hover .svc-img img{ filter:brightness(.95) saturate(.9); }
+
+    .svc-img-badge {
+      position:absolute; bottom:.85rem; right:.85rem;
+      width:46px; height:46px;
+      background:#FFF; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.3rem; box-shadow:0 3px 12px rgba(0,0,0,.2);
+    }
+    [data-theme="dark"] .svc-img-badge{ background:rgba(22,8,16,.95); }
+
+    .svc-body { padding:1.5rem; }
+    .svc-title    { font-size:1.1rem; font-weight:700; color:var(--text); margin-bottom:.2rem; }
+    .svc-subtitle {
+      font-family:'Noto Sans Tamil',sans-serif;
+      font-size:.8rem; color:var(--gold); font-weight:600; margin-bottom:.75rem;
+    }
+    .svc-desc { font-size:.85rem; color:var(--muted); line-height:1.75; margin-bottom:1rem; }
+    .svc-tags { display:flex; flex-wrap:wrap; gap:.4rem; }
+    .tag {
+      background:var(--gold-tint);
+      border:1px solid var(--gold-tint2);
+      color:var(--gold);
+      padding:.22rem .72rem; border-radius:50px;
+      font-size:.68rem; font-weight:500;
+    }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact {
+      padding:7rem 2rem;
+      border-top:1px solid var(--border);
+    }
+
+    .contact-hd { text-align:center; margin-bottom:3rem; }
+    .contact-hd .divider { margin:0 auto; }
+
+    .contact-grid {
+      display:grid; grid-template-columns:1fr 1.3fr;
+      gap:2.5rem; align-items:start;
+    }
+
+    .contact-cards { display:flex; flex-direction:column; gap:1rem; }
+
+    .c-card {
+      display:flex; align-items:flex-start; gap:1rem;
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:12px; padding:1.25rem 1.4rem;
+      transition:var(--ease); box-shadow:var(--shadow);
+    }
+    .c-card:hover {
+      border-color:var(--gold-tint2);
+      transform:translateX(5px); box-shadow:var(--shadow-lg);
+    }
+    .c-icon {
+      width:42px; height:42px; min-width:42px;
+      background:var(--gold-tint); border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.2rem;
+    }
+    .c-body h4 {
+      font-size:.7rem; font-weight:700; color:var(--gold);
+      text-transform:uppercase; letter-spacing:1.2px; margin-bottom:.28rem;
+    }
+    .c-body p,.c-body a {
+      font-size:.88rem; color:var(--muted); line-height:1.6;
+    }
+    .c-body a:hover { color:var(--gold); }
+
+    /* Map */
+    .map-wrap {
+      border-radius:16px; overflow:hidden;
+      border:1px solid var(--border);
+      display:flex; flex-direction:column;
+      box-shadow:var(--shadow-lg); height:410px;
+    }
+    .map-wrap iframe { width:100%; flex:1; border:0; display:block; }
+
+    /* Map CTA — black / gold */
+    .map-dir-btn {
+      display:flex; align-items:center; justify-content:center; gap:.5rem;
+      padding:.88rem;
+      background:var(--c-dark); color:var(--c-gold);
+      font-size:.86rem; font-weight:700;
+      border-top:1px solid rgba(212,175,55,.2);
+      transition:var(--ease);
+      letter-spacing:.3px;
+    }
+    .map-dir-btn:hover {
+      background:#1A1A1A;
+      box-shadow:inset 0 0 0 1px rgba(212,175,55,.3);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background:var(--bg-card2);
+      border-top:1px solid var(--border);
+      padding:3rem 2rem 2rem;
+    }
+    .footer-inner { max-width:1100px; margin:0 auto; text-align:center; }
+
+    .footer-logo {
+      height:70px; width:auto; margin:0 auto 1rem;
+      object-fit:contain; display:block;
+    }
+    [data-theme="dark"] .footer-logo { filter:brightness(1.06); }
+
+    .footer-sub  { font-size:.78rem; color:var(--muted); margin-bottom:1.5rem; }
+    .footer-nav  {
+      display:flex; justify-content:center; gap:2rem;
+      flex-wrap:wrap; margin-bottom:1.5rem;
+    }
+    .footer-nav a { font-size:.83rem; color:var(--muted); transition:color .25s; }
+    .footer-nav a:hover { color:var(--gold); }
+    .footer-hr   { width:80px; height:1px; margin:0 auto 1.25rem; background:var(--border); }
+    .footer-copy { font-size:.77rem; color:var(--muted); }
+    .footer-copy .f-brand { color:var(--gold); font-weight:600; }
+
+    /* ============================================================
+       WHATSAPP FLOAT  (bottom-right)
+    ============================================================ */
+    .wa-float {
+      position:fixed; bottom:1.75rem; right:1.75rem; z-index:990;
+      display:flex; flex-direction:column; align-items:flex-end; gap:.5rem;
+    }
+    .wa-tip {
+      background:var(--bg-card); border:1px solid var(--border);
+      color:var(--text); padding:.35rem .9rem;
+      border-radius:6px; font-size:.74rem; white-space:nowrap;
+      opacity:0; transform:translateX(8px);
+      transition:var(--ease); pointer-events:none; box-shadow:var(--shadow);
+    }
+    .wa-float:hover .wa-tip { opacity:1; transform:translateX(0); }
+    .wa-btn {
+      width:56px; height:56px;
+      background:#25D366; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 4px 16px rgba(37,211,102,.44);
+      transition:var(--ease); animation:pulseDot 3s ease infinite;
+    }
+    .wa-btn:hover { transform:scale(1.12); background:#1da851; }
+    .wa-btn svg  { width:28px; height:28px; fill:#fff; }
+
+    /* ============================================================
+       THEME TOGGLE FLOAT  (bottom-left)
+    ============================================================ */
+    .theme-float { position:fixed; bottom:1.75rem; left:1.75rem; z-index:990; }
+    .theme-float-btn {
+      display:flex; align-items:center; gap:.5rem;
+      padding:.6rem 1.1rem; border-radius:50px;
+      background:var(--bg-card); border:1.5px solid var(--border);
+      color:var(--text);
+      font-size:.78rem; font-weight:600;
+      cursor:pointer; white-space:nowrap;
+      box-shadow:var(--shadow-lg); transition:var(--ease);
+    }
+    .theme-float-btn:hover { border-color:var(--gold); }
+    .theme-float-btn .t-icon { font-size:1rem; line-height:1; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media(max-width:960px){
+      .about-grid             { grid-template-columns:1fr; }
+      .about-photo-frame img  { height:320px; }
+      .services-grid          { grid-template-columns:1fr 1fr; }
+      .contact-grid           { grid-template-columns:1fr; }
+      .map-wrap               { height:320px; }
+    }
+    @media(max-width:600px){
+      #about,#services,#contact { padding:4.5rem 1.25rem; }
+      .services-grid  { grid-template-columns:1fr; }
+      .about-feats    { grid-template-columns:1fr; }
+      .photo-gradient { flex-wrap:wrap; gap:.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav id="navbar" aria-label="Main navigation">
+  <a href="#hero" class="nav-brand">
+    <img src="images/Logo%20Without%20Background.png"
+         alt="Arulnandhi Minnagam" class="nav-logo" />
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" aria-label="Welcome">
+
+  <!-- ── CAROUSEL (full-screen background) ── -->
+  <div class="carousel" aria-hidden="true">
+
+    <div class="c-slide active">
+      <img src="images/1.wires.png" alt="Electrical Wires and Cables" />
+      <span class="c-caption">Wires &amp; Cables</span>
+    </div>
+
+    <div class="c-slide">
+      <img src="images/2.Switch.png" alt="Electrical Switches and Sockets" />
+      <span class="c-caption">Switches &amp; Sockets</span>
+    </div>
+
+    <div class="c-slide">
+      <img src="images/3.Bulbs.png" alt="LED Bulbs and Light Fixtures" />
+      <span class="c-caption">LED Bulbs &amp; Fixtures</span>
+    </div>
+
+    <div class="c-slide">
+      <img src="images/4.MCP.png" alt="MCB Panels and Distribution Boards" />
+      <span class="c-caption">MCB Panels &amp; Boards</span>
+    </div>
+
+    <div class="c-slide">
+      <img src="images/5.Waterline.png" alt="Waterline Pipe Fittings and Plumbing" />
+      <span class="c-caption">Waterline Pipe Fittings</span>
+    </div>
+
+    <div class="c-slide">
+      <img src="images/6.Sanitary.png" alt="Sanitary Wares and Bathroom Fixtures" />
+      <span class="c-caption">Sanitary Wares</span>
+    </div>
+
+    <!-- Gradient overlay — keeps text readable -->
+    <div class="c-overlay"></div>
+    <!-- Dot-grid texture -->
+    <div class="c-grid"></div>
+
+    <!-- Arrow controls -->
+    <button class="c-prev" id="cPrev" aria-label="Previous">&#8249;</button>
+    <button class="c-next" id="cNext" aria-label="Next">&#8250;</button>
+
+    <!-- Dot navigation -->
+    <div class="c-dots">
+      <button class="c-dot active" aria-label="Slide 1"></button>
+      <button class="c-dot"        aria-label="Slide 2"></button>
+      <button class="c-dot"        aria-label="Slide 3"></button>
+      <button class="c-dot"        aria-label="Slide 4"></button>
+      <button class="c-dot"        aria-label="Slide 5"></button>
+      <button class="c-dot"        aria-label="Slide 6"></button>
+    </div>
+
+  </div><!-- /carousel -->
+
+  <!-- ── HERO CONTENT (above carousel) ── -->
+  <div class="hero-inner">
+
+    <!-- Logo — visible immediately on landing -->
+    <img
+      src="images/Logo%20Without%20Background.png"
+      alt="Arulnandhi Minnagam Logo"
+      class="hero-logo"
+    />
+
+    <div class="hero-badge">📍Near Tamil Sports Academey</div>
+
+    <h1 class="hero-title">
+      <span class="name-ta">Arulnandhi Minnagam</span>
+      <span class="accent">அருள்நந்தி </span> மின்னகம்
+    </h1>
+
+    <p class="hero-tagline">
+      <span class="item">Electricals</span>
+      <span class="dot">•</span>
+      <span class="item">Waterline Pipe Fittings</span>
+      <span class="dot">•</span>
+      <span class="item">Sanitary Wares</span>
+    </p>
+
+    <div class="hero-cta">
+      <a href="tel:+918122990485" class="btn btn-primary">
+        📞&nbsp; Call Now — 81229 90485
+      </a>
+      <a href="#contact" class="btn btn-outline">
+        📍&nbsp; Find Us
+      </a>
+    </div>
+
+  </div><!-- /hero-inner -->
+
+</section>
+
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-text fade-up">
+        <span class="section-label">About Us</span>
+        <h2 class="section-title" id="about-heading">
+          Your Trusted <span class="highlight">Local Shop</span>
+        </h2>
+        <div class="divider"></div>
+
+        <p class="ta-line">
+          அருள்நந்தி மின்னகம் — உங்கள் நம்பகமான மின்சாதனம், குழாய் மற்றும் சானிட்டரி கடை.
+        </p>
+        <p>
+          Arulnandhi Minnagam is a trusted neighbourhood shop serving Sulur and
+          surrounding villages with quality electrical goods, waterline pipe fittings,
+          and sanitary wares — at honest prices with friendly, personalised service.
+        </p>
+
+        <div class="about-feats">
+          <div class="feat">
+            <span class="feat-icon">⚡</span>
+            <div class="feat-body">
+              <strong>Quality Products</strong>Sourced from reliable brands
+            </div>
+          </div>
+          <div class="feat">
+            <span class="feat-icon">💰</span>
+            <div class="feat-body">
+              <strong>Fair Pricing</strong>Best value for your money
+            </div>
+          </div>
+          <div class="feat">
+            <span class="feat-icon">🤝</span>
+            <div class="feat-body">
+              <strong>Trusted Service</strong>Honest &amp; friendly advice
+            </div>
+          </div>
+          <div class="feat">
+            <span class="feat-icon">📦</span>
+            <div class="feat-body">
+              <strong>Wide Selection</strong>500+ products in stock
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <div class="about-photo-frame">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1663011078369-1613ac0a4758?auto=format&fit=crop&w=700&h=500&q=80"
+            alt="Arulnandhi Minnagam Hardware and Electrical Shop"
+            loading="lazy"
+          />
+          <div class="photo-badge">⭐ Trusted Local Shop</div>
+          <div class="photo-gradient">
+            <div class="p-stat">
+              <span class="p-num">500+</span>
+              <span class="p-lbl">Products</span>
+            </div>
+            <div class="p-stat">
+              <span class="p-num">1,000+</span>
+              <span class="p-lbl">Customers</span>
+            </div>
+            <div class="p-stat">
+              <span class="p-num">100%</span>
+              <span class="p-lbl">Trusted</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== SERVICES ===================== -->
+<section id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <header class="services-hd">
+      <span class="section-label">Our Services</span>
+      <h2 class="section-title" id="services-heading">
+        What We <span class="highlight">Offer</span>
+      </h2>
+      <div class="divider"></div>
+      <p>Everything for your home, construction &amp; renovation — all under one roof.</p>
+    </header>
+
+    <div class="services-grid">
+
+      <div class="svc-card fade-up">
+        <div class="svc-img">
+          <img src="images/4.MCP.png"
+               alt="Electrical switchboard and wiring" loading="lazy" />
+          <div class="svc-img-badge">⚡</div>
+        </div>
+        <div class="svc-body">
+          <h3 class="svc-title">Electricals</h3>
+          <p class="svc-subtitle">மின்சாதனங்கள்</p>
+          <p class="svc-desc">
+            From wiring and switches to MCBs and LED fixtures — everything for
+            home wiring, construction, and electrical installations.
+          </p>
+          <div class="svc-tags">
+            <span class="tag">Switches & Sockets</span>
+            <span class="tag">Wires & Cables</span>
+            <span class="tag">MCBs & DBs</span>
+            <span class="tag">LED Lights</span>
+            <span class="tag">Fans</span>
+            <span class="tag">Conduits</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up">
+        <div class="svc-img">
+          <img src="images/5.Waterline.png"
+               alt="Waterline pipe fittings and plumbing" loading="lazy" />
+          <div class="svc-img-badge">🚰</div>
+        </div>
+        <div class="svc-body">
+          <h3 class="svc-title">Waterline Pipe Fittings</h3>
+          <p class="svc-subtitle">நீர்க்குழாய் பொருட்கள்</p>
+          <p class="svc-desc">
+            Premium pipes, connectors, valves and fittings for all plumbing
+            and waterline needs — residential and commercial.
+          </p>
+          <div class="svc-tags">
+            <span class="tag">PVC Pipes</span>
+            <span class="tag">CPVC Pipes</span>
+            <span class="tag">GI Pipes</span>
+            <span class="tag">Valves</span>
+            <span class="tag">Taps & Faucets</span>
+            <span class="tag">Water Tanks</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up">
+        <div class="svc-img">
+          <img src="images/6.Sanitary.png"
+               alt="Modern bathroom sanitary ware fixtures" loading="lazy" />
+          <div class="svc-img-badge">🚿</div>
+        </div>
+        <div class="svc-body">
+          <h3 class="svc-title">Sanitary Wares</h3>
+          <p class="svc-subtitle">சானிட்டரி பொருட்கள்</p>
+          <p class="svc-desc">
+            Modern bathroom solutions for comfortable, stylish, and hygienic
+            living — from wash basins to geysers and accessories.
+          </p>
+          <div class="svc-tags">
+            <span class="tag">Wash Basins</span>
+            <span class="tag">WC Suites</span>
+            <span class="tag">Showers</span>
+            <span class="tag">Geysers</span>
+            <span class="tag">Bathroom Accessories</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <header class="contact-hd fade-up">
+      <span class="section-label">Contact Us</span>
+      <h2 class="section-title" id="contact-heading">
+        Get in <span class="highlight">Touch</span>
+      </h2>
+      <div class="divider"></div>
+    </header>
+
+    <div class="contact-grid">
+      <div class="contact-cards fade-up">
+
+        <div class="c-card">
+          <div class="c-icon">📍</div>
+          <div class="c-body">
+            <h4>Address</h4>
+            <p>Papampatti Main Road,<br>Peedampalli, Sulur,<br>Tamil Nadu</p>
+          </div>
+        </div>
+
+        <div class="c-card">
+          <div class="c-icon">📞</div>
+          <div class="c-body">
+            <h4>Phone</h4>
+            <a href="tel:+918122990485">+91 81229 90485</a>
+          </div>
+        </div>
+
+        <div class="c-card">
+          <div class="c-icon">⏰</div>
+          <div class="c-body">
+            <h4>Shop Hours</h4>
+            <p>Mon – Sat: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 2:00 PM</p>
+          </div>
+        </div>
+
+        <div class="c-card">
+          <div class="c-icon">💬</div>
+          <div class="c-body">
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/918122990485?text=Hello%20Arulnandhi%20Minnagam%2C%20I%27m%20interested%20in%20your%20products."
+               target="_blank" rel="noopener noreferrer">
+              Chat — 81229 90485
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="map-wrap fade-up">
+        <iframe
+          src="https://maps.google.com/maps?q=10.9826576,77.0907133&output=embed&z=18&hl=en"
+          allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Arulnandhi Minnagam Location">
+        </iframe>
+        <a href="https://maps.app.goo.gl/8Bqr2sh66ioT355x9"
+           target="_blank" rel="noopener noreferrer"
+           class="map-dir-btn">
+          🧭 &nbsp;Get Directions in Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-inner">
+    <img src="images/Logo%20Without%20Background.png"
+         alt="Arulnandhi Minnagam" class="footer-logo" />
+    <div class="footer-sub">
+      Electricals &nbsp;•&nbsp; Waterline Pipe Fittings &nbsp;•&nbsp; Sanitary Wares
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer-hr"></div>
+    <p class="footer-copy">
+      &copy; <span id="yr"></span>
+      <span class="f-brand">Arulnandhi Minnagam</span>. All rights reserved.
+      &nbsp;|&nbsp; Papampatti Main Road, Peedampalli, Sulur, Tamil Nadu
+    </p>
+  </div>
+</footer>
+
+
+<!-- ===================== WHATSAPP (bottom-right) ===================== -->
+<div class="wa-float">
+  <div class="wa-tip">Chat on WhatsApp</div>
+  <a href="https://wa.me/918122990485?text=Hello%20Arulnandhi%20Minnagam%2C%20I%27m%20interested%20in%20your%20products."
+     target="_blank" rel="noopener noreferrer"
+     class="wa-btn" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556
+        5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248
+        3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001
+        -3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392
+        1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892
+        -5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999
+        3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149
+        -1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967
+        -.941 1.165-.173.198-.345.223-.643.074-.297-.149-1.255-.462-2.39-1.475
+        -.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133
+        .297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521
+        -.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01
+        c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074
+        c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226
+        1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29
+        .173-1.414z"/>
+    </svg>
+  </a>
+</div>
+
+
+<!-- ===================== THEME TOGGLE (bottom-left) ===================== -->
+<div class="theme-float">
+  <button class="theme-float-btn" id="themeToggle" aria-label="Toggle dark/light mode">
+    <span class="t-icon" id="themeIcon">🌙</span>
+    <span id="themeLabel">Dark Mode</span>
+  </button>
+</div>
+
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+  /* ── Theme toggle ── */
+  const html       = document.documentElement;
+  const themeBtn   = document.getElementById('themeToggle');
+  const themeIcon  = document.getElementById('themeIcon');
+  const themeLabel = document.getElementById('themeLabel');
+
+  function applyTheme(t) {
+    html.setAttribute('data-theme', t);
+    const dark = t === 'dark';
+    themeIcon.textContent  = dark ? '☀️' : '🌙';
+    themeLabel.textContent = dark ? 'Light Mode' : 'Dark Mode';
+    localStorage.setItem('theme', t);
+  }
+  applyTheme(localStorage.getItem('theme') || 'light');
+  themeBtn.addEventListener('click', () => {
+    applyTheme(html.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+  });
+
+  /* ── Navbar reveal on scroll ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('show', window.scrollY > 80);
+  }, { passive: true });
+
+  /* ── Hamburger ── */
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link =>
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+    })
+  );
+
+  /* ── Hero carousel ── */
+  const slides   = document.querySelectorAll('.c-slide');
+  const dots     = document.querySelectorAll('.c-dot');
+  let   current  = 0;
+  let   autoTimer;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 4500);
+  }
+
+  document.getElementById('cPrev').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  document.getElementById('cNext').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetAuto(); }));
+  resetAuto();
+
+  /* ── Scroll fade-up ── */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('show'), i * 120);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  /* ── Footer year ── */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
