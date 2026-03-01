@@ -257,11 +257,10 @@
       min-height:100vh;
       display:flex;
       align-items:center;
-      /* content pushed to left — product visible on right */
-      justify-content:flex-start;
-      padding: calc(68px + 4rem) 5vw 4rem calc(max(3rem,6vw));
+      /* content centred over full-bleed carousel */
+      justify-content:center;
+      padding: calc(68px + 3rem) 2rem 4rem;
       overflow:hidden;
-      /* dark base in case images load slowly */
       background:var(--c-bg);
     }
 
@@ -278,14 +277,13 @@
     }
     .c-slide.active { opacity:1; }
 
-    /* Product image — fills the full right half of the hero, cropped/zoomed to match */
+    /* Product image — full-bleed background behind centred content */
     .c-slide img {
       position:absolute;
-      right:0; top:0;
-      width:55%; height:100%;
+      left:0; top:0;
+      width:100%; height:100%;
       object-fit:cover;
       object-position:center;
-      filter:drop-shadow(0 20px 60px rgba(212,175,55,.18));
     }
     /* Ken-Burns on active */
     .c-slide.active img {
@@ -302,18 +300,10 @@
       z-index:2;
     }
 
-    /* Left-to-right gradient — makes text always readable */
+    /* Uniform dark overlay — keeps centred text readable over full-bleed carousel */
     .c-overlay {
       position:absolute; inset:0; z-index:1; pointer-events:none;
-      background:linear-gradient(
-        to right,
-        rgba(8,2,16,.98)   0%,
-        rgba(8,2,16,.95)  32%,
-        rgba(8,2,16,.75)  48%,
-        rgba(8,2,16,.20)  62%,
-        rgba(8,2,16,.04)  80%,
-        transparent      100%
-      );
+      background:rgba(8,2,16,.62);
     }
 
     /* Subtle dot-grid over the whole hero */
@@ -361,7 +351,8 @@
     /* ── Hero content (above carousel) ── */
     .hero-inner {
       position:relative; z-index:5;
-      max-width:520px;
+      max-width:680px;
+      text-align:center;
       animation:fadeInUp .9s ease .1s both;
     }
 
@@ -369,7 +360,7 @@
     .hero-logo {
       height:80px; width:auto; max-width:260px;
       object-fit:contain; display:block;
-      margin-bottom:1.8rem;
+      margin:0 auto 1.8rem;
       filter:drop-shadow(0 4px 16px rgba(212,175,55,.25));
     }
 
@@ -382,6 +373,7 @@
       padding:.35rem 1.1rem; border-radius:50px;
       font-size:.72rem; font-weight:700; letter-spacing:1.5px;
       text-transform:uppercase; margin-bottom:1.4rem;
+      /* keep badge centred within the text-align:center parent */
     }
 
     /* Main title — always white on dark hero */
@@ -414,25 +406,12 @@
     .hero-tagline .item { color:rgba(255,255,255,.88); font-weight:500; }
     .hero-tagline .dot  { color:var(--c-gold); font-weight:700; margin:0 .4rem; }
 
-    .hero-cta { display:flex; gap:1rem; flex-wrap:wrap; }
+    .hero-cta { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
 
-    /* Mobile hero */
+    /* Mobile hero — tighten padding only */
     @media(max-width:768px){
-      #hero{
-        justify-content:center;
-        text-align:center;
-        padding:calc(68px + 3rem) 1.5rem 5rem;
-      }
-      .hero-inner{ text-align:center; }
-      .hero-logo { margin:0 auto 1.6rem; }
-      .hero-cta  { justify-content:center; }
-      /* stronger overlay on mobile — product is directly behind text */
-      .c-overlay{ background:rgba(8,2,16,.88); }
-      .c-slide img{
-        width:100%; height:45%; right:0; top:auto; bottom:0;
-        object-fit:cover; object-position:center;
-      }
-      .c-caption  { right:50%; transform:translateX(50%); bottom:4.5rem; }
+      #hero{ padding:calc(68px + 2rem) 1.5rem 5rem; }
+      .c-overlay{ background:rgba(8,2,16,.70); }
     }
 
     /* ============================================================
